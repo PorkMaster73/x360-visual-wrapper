@@ -4,11 +4,6 @@ import subprocess
 
 # // GitHub URL of the raw version of xbox360wrapper_main.py
 url = "https://raw.githubusercontent.com/PorkMaster73/x360-visual-wrapper/main/"
-includes_fname =  f"includes.txt"
-
-includes = download_write_to_file(includes_fname, False)
-includes = [x.strip() for x in includes.split("\n") if (x and "---" not in x)]
-includes = [x[5:] for x in includes]  # // Gets rid of the "root/" prefix.
 
 
 def download_write_to_file(file_path: str, save_locally=True) -> str:
@@ -26,6 +21,12 @@ def download_write_to_file(file_path: str, save_locally=True) -> str:
         print(f"Failed to download the file: {e}")
         exit(1)  # // Returns nothing.
 
+
+includes_fname =  f"includes.txt"
+
+includes = download_write_to_file(includes_fname, False)
+includes = [x.strip() for x in includes.split("\n") if (x and "---" not in x)]
+includes = [x[5:] for x in includes]  # // Gets rid of the "root/" prefix.
 
 # // Loop through each file to be included.
 for file_name in includes:
