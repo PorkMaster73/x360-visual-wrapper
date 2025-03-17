@@ -1,0 +1,5 @@
+ --- (Triple dashes mean commented line)
+ --- This includes the names of the files to be pulled down by the updater.py script.
+root/xbox360wrapper_main.py
+root/playstation.py
+root/updater.py 
