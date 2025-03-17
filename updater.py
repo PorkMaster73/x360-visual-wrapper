@@ -16,7 +16,7 @@ def download_write_to_file(file_path: str, save_locally=True) -> str:
             with open(file_path, "wb") as file:
                 file.write(response.content)
             print(f"Successfully downloaded and replaced {file_path}.")
-        return str(response.content)
+        return str(response.content.decode())
     except requests.exceptions.RequestException as e:
         print(f"Failed to download the file: {e}")
         exit(1)  # // Returns nothing.
