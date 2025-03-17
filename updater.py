@@ -10,13 +10,13 @@ def download_write_to_file(file_path: str, save_locally=True) -> str:
     # // Download the latest xbox360wrapper_main.py
     try:
         print(f"Downloading the latest {file_path} from GitHub...")
-        response = requests.get(url + filepath)
+        response = requests.get(url + file_path)
         response.raise_for_status()  # // Check if the request was successful
         if (save_locally):
             with open(file_path, "wb") as file:
                 file.write(response.content)
             print(f"Successfully downloaded and replaced {file_path}.")
-        return response.content
+        return str(response.content)
     except requests.exceptions.RequestException as e:
         print(f"Failed to download the file: {e}")
         exit(1)  # // Returns nothing.
