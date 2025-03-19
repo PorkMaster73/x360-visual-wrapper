@@ -114,7 +114,7 @@ def check_for_new_controller():
 def shutdown_system():
     """Immediately shuts down the Windows computer."""
     print("Shutting down system...")
-    subprocess.run(["shutdown", "/s", "/t", "0"], shell=False)
+    subprocess.run(["shutdown", "/h"], shell=False)
     # For hibernate, use: subprocess.run(["shutdown", "/h"], shell=False)
 
 
